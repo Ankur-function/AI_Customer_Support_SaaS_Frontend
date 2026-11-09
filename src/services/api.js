@@ -2,7 +2,8 @@ import axios from 'axios';
 
 // Create an isolated instance pointing directly to your local Node.js server
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000', // Adjust if your backend API prefix is different
+  // baseURL: import.meta.env.VITE_API_URL ||  'http://localhost:3000', // Adjust if your backend API prefix is different
+  baseURL: import.meta.env.VITE_API_URL || 'https://ai-customer-support-saas-backend.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
