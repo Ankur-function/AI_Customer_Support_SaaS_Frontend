@@ -9,7 +9,8 @@ export const SocketProvider = ({ children }) => {
 
     useEffect(() => {
         // Replace with your exact Node.js backend port if different than 3000
-        const socketInstance = io("http://localhost:3000", {
+        const SOCKET_URL = import.meta.env.VITE_API_URL || 'https://ai-customer-support-saas-backend.onrender.com';
+        const socketInstance = io(SOCKET_URL, {
             autoConnect: true,
             transports: ['websocket'] // Explicitly enforce high-performance WebSocket streams
         });
